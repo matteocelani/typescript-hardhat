@@ -1,6 +1,6 @@
 {
   "name": "typescript-hardhat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript Hardhat configuration template",
   "author": "Mashu",
   "devDependencies": {
@@ -17,6 +17,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@anders-t/ethers-ledger": "^1.0.4",
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
     "dotenv": "^16.0.1",
     "hardhat-gas-reporter": "^1.0.8",
