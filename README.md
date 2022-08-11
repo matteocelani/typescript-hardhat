@@ -34,14 +34,14 @@ You can deploy your contract using the deployment scripts in the `scripts` folde
 
 You can target any network from your Hardhat config using:
 ```sh
-npx hardhat run --network <your-network> scripts/deploy.ts
+$ npx hardhat run --network <your-network> scripts/deploy.ts
 ```
 
 ### Hardhat deploying with Ledger
 
 You can target any network from your Hardhat config using:
 ```sh
-npx hardhat run --network <your-network> scripts/deployHardware.ts
+$ npx hardhat run --network <your-network> scripts/deployHardware.ts
 ```
 
 #### Derivation path for ETH in Ledger
