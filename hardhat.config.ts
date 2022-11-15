@@ -10,15 +10,15 @@ import "solidity-coverage";
 dotenv.config();
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "rinkeby",
+  defaultNetwork: "hardhat",
   etherscan: {
     apiKey: {
       // Ethereum 
       mainnet: process.env.ETHERSCAN_API_KEY || '',
-      rinkeby: process.env.ETHERSCAN_API_KEY || '',
+      goerli: process.env.ETHERSCAN_API_KEY || '',
       // Arbitrum
       arbitrumOne: process.env.ARBISCAN_API_KEY || '',
-      arbitrumRinkeby: process.env.ARBISCAN_API_KEY || '',
+      arbitrumGoerli: process.env.ARBISCAN_API_KEY || '',
       // Avalanche
       avalanche: process.env.SNOWTRACE_API_KEY || '',
       avalancheFuji: process.env.SNOWTRACE_API_KEY || '',
@@ -43,10 +43,10 @@ const config: HardhatUserConfig = {
       chainId: 1,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    rinkeby: {
-      url: 'https://rinkeby.infura.io/v3/' + process.env.INFURA_API_KEY || '',
+    goerli: {
+      url: 'https://eth-goerli.infura.io/v3/' + process.env.INFURA_API_KEY || '',
       gasPrice: 75000000000,
-      chainId: 4,
+      chainId: 5,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // Arbitrum
@@ -56,10 +56,10 @@ const config: HardhatUserConfig = {
       chainId: 42161,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    arbitrumRinkeby: {
-      url: 'https://rinkeby.arbitrum.io/rpc',
+    arbitrumGoerli: {
+      url: 'https://goerli-rollup.arbitrum.io/rpc',
       gasPrice: 75000000000,
-      chainId: 421611,
+      chainId: 421613,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // Avalanche
