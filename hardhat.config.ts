@@ -44,7 +44,7 @@ const config: HardhatUserConfig = {
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     goerli: {
-      url: 'https://eth-goerli.infura.io/v3/' + process.env.INFURA_API_KEY || '',
+      url: 'https://goerli.infura.io/v3/' + process.env.INFURA_API_KEY || '',
       gasPrice: 75000000000,
       chainId: 5,
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
