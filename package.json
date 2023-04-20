@@ -1,6 +1,6 @@
 {
   "name": "typescript-hardhat",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "TypeScript Hardhat configuration template",
   "keywords": [
     "typescript",
@@ -13,7 +13,8 @@
     "url": "https://github.com/matteocelani/typescript-hardhat/issues"
   },
   "author": {
-    "name": "Matteo Celani"
+    "name": "Matteo Celani",
+    "url": "https://mashu.dev"
   },
   "repository": {
     "type": "git",
