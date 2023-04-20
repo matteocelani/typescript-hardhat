@@ -52,7 +52,7 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    sepholia: {
+    sepolia: {
       url: "https://sepolia.infura.io/v3/" + process.env.INFURA_API_KEY || "",
       gasPrice: 75000000000,
       chainId: 11155111,
@@ -60,7 +60,7 @@ const config: HardhatUserConfig = {
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // Arbitrum
-    arbitrumOne: {
+    arbitrum: {
       url: "https://arb1.arbitrum.io/rpc",
       gasPrice: 75000000000,
       chainId: 42161,

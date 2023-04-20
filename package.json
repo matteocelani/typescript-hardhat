@@ -1,6 +1,6 @@
 {
   "name": "typescript-hardhat",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "TypeScript Hardhat configuration template",
   "keywords": [
     "typescript",
@@ -19,6 +19,32 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/matteocelani/typescript-hardhat"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "deployMainnet": "npx hardhat run --network mainnet scripts/deploy.ts",
+    "deployGoerli": "npx hardhat run --network goerli scripts/deploy.ts",
+    "deploySepolia": "npx hardhat run --network sepolia scripts/deploy.ts",
+    "deployArbitrum": "npx hardhat run --network arbitrum scripts/deploy.ts",
+    "deployArbitrumGoerli": "npx hardhat run --network arbitrumGoerli scripts/deploy.ts",
+    "deployAvalanche": "npx hardhat run --network avalanche scripts/deploy.ts",
+    "deployAvalancheFuji": "npx hardhat run --network avalancheFuji scripts/deploy.ts",
+    "deployBsc": "npx hardhat run --network bsc scripts/deploy.ts",
+    "deployBscTestnet": "npx hardhat run --network bscTestnet scripts/deploy.ts",
+    "deployPolygon": "npx hardhat run --network polygon scripts/deploy.ts",
+    "deployPolygonMumbai": "npx hardhat run --network polygonMumbai scripts/deploy.ts",
+    "verifyMainnet": "npx hardhat run --network mainnet scripts/verify.ts",
+    "verifyGoerli": "npx hardhat run --network goerli scripts/verify.ts",
+    "verifySepolia": "npx hardhat run --network sepolia scripts/verify.ts",
+    "verifyArbitrum": "npx hardhat run --network arbitrum scripts/verify.ts",
+    "verifyArbitrumGoerli": "npx hardhat run --network arbitrumGoerli scripts/verify.ts",
+    "verifyAvalanche": "npx hardhat run --network avalanche scripts/verify.ts",
+    "verifyAvalancheFuji": "npx hardhat run --network avalancheFuji scripts/verify.ts",
+    "verifyBsc": "npx hardhat run --network bsc scripts/verify.ts",
+    "verifyBscTestnet": "npx hardhat run --network bscTestnet scripts/verify.ts",
+    "verifyPolygon": "npx hardhat run --network polygon scripts/verify.ts",
+    "verifyPolygonMumbai": "npx hardhat run --network polygonMumbai scripts/verify.ts"
   },
   "devDependencies": {
     "@anders-t/ethers-ledger": "^1.0.4",
