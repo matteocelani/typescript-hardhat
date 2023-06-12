@@ -13,8 +13,11 @@ async function main() {
 
   const factory = await ethers.getContractFactory("SampleContract");
 
-  const sampleContract = await factory.deploy('Hello World');
-  console.log("Transaction started with hash:", sampleContract.deployTransaction.hash);
+  const sampleContract = await factory.deploy("Hello World");
+  console.log(
+    "Transaction started with hash:",
+    sampleContract.deployTransaction.hash
+  );
 
   await sampleContract.deployed();
   console.log("Contract deployed to:", sampleContract.address);

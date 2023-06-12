@@ -5,6 +5,7 @@ import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
+import "hardhat-contract-sizer";
 import "solidity-coverage";
 
 dotenv.config();
@@ -31,7 +32,9 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    hardhat: {},
+    hardhat: {
+      // forking: { url: "https://mainnet.infura.io/v3/" + process.env.INFURA_API_KEY || "" }
+    },
     local: {
       url: "http://127.0.0.1:8545",
       accounts:
@@ -142,6 +145,13 @@ const config: HardhatUserConfig = {
     currency: "USD",
     excludeContracts: [],
     src: "./contracts",
+  },
+  contractSizer: {
+    alphaSort: true,
+    disambiguatePaths: false,
+    runOnCompile: true,
+    strict: true,
+    unit: "kB",
   },
 };
 
