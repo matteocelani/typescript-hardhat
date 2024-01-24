@@ -23,6 +23,7 @@
   "scripts": {
     "test": "npx hardhat test",
     "compile": "npx hardhat compile",
+    "coverage": "npx hardhat coverage",
     "deployMainnet": "npx hardhat run --network mainnet scripts/deploy.ts",
     "deployGoerli": "npx hardhat run --network goerli scripts/deploy.ts",
     "deploySepolia": "npx hardhat run --network sepolia scripts/deploy.ts",
