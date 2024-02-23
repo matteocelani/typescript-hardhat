@@ -1,9 +1,10 @@
 import * as dotenv from "dotenv";
 
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomiclabs/hardhat-etherscan";
-import "@nomiclabs/hardhat-waffle";
-import "@typechain/hardhat";
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-verify";
+import "@nomicfoundation/hardhat-ledger";
+import "@nomicfoundation/hardhat-ethers";
 import "hardhat-gas-reporter";
 import "hardhat-contract-sizer";
 import "solidity-coverage";
@@ -16,7 +17,7 @@ const config: HardhatUserConfig = {
     apiKey: {
       // Ethereum
       mainnet: process.env.ETHERSCAN_API_KEY || "",
-      goerli: process.env.ETHERSCAN_API_KEY || "",
+      sepolia: process.env.ETHERSCAN_API_KEY || "",
       // Arbitrum
       arbitrumOne: process.env.ARBISCAN_API_KEY || "",
       arbitrumGoerli: process.env.ARBISCAN_API_KEY || "",
@@ -34,11 +35,13 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       // forking: { url: "https://mainnet.infura.io/v3/" + process.env.INFURA_API_KEY || "" }
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     local: {
       url: "http://127.0.0.1:8545",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     // Ethereum
     mainnet: {
@@ -47,13 +50,7 @@ const config: HardhatUserConfig = {
       chainId: 1,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-    },
-    goerli: {
-      url: "https://goerli.infura.io/v3/" + process.env.INFURA_API_KEY || "",
-      gasPrice: 75000000000,
-      chainId: 5,
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     sepolia: {
       url: "https://sepolia.infura.io/v3/" + process.env.INFURA_API_KEY || "",
@@ -61,6 +58,7 @@ const config: HardhatUserConfig = {
       chainId: 11155111,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     // Arbitrum
     arbitrum: {
@@ -69,6 +67,7 @@ const config: HardhatUserConfig = {
       chainId: 42161,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     arbitrumGoerli: {
       url: "https://goerli-rollup.arbitrum.io/rpc",
@@ -76,6 +75,7 @@ const config: HardhatUserConfig = {
       chainId: 421613,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     // Avalanche
     avalanche: {
@@ -84,6 +84,7 @@ const config: HardhatUserConfig = {
       chainId: 43114,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     avalancheFuji: {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
@@ -91,6 +92,7 @@ const config: HardhatUserConfig = {
       chainId: 43113,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     // BNB Smart Chain
     bsc: {
@@ -99,6 +101,7 @@ const config: HardhatUserConfig = {
       chainId: 56,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     bscTestnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
@@ -106,6 +109,7 @@ const config: HardhatUserConfig = {
       chainId: 97,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],s
     },
     // Polygon
     polygon: {
@@ -114,26 +118,19 @@ const config: HardhatUserConfig = {
       gasPrice: 8000000000,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
     polygonMumbai: {
-      url: "https://matic-mumbai.chainstacklabs.com",
+      url: "https://rpc-mumbai.maticvigil.com",
       chainId: 80001,
       gasPrice: 8000000000,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
     },
   },
   solidity: {
-    compilers: [
-      { version: "0.5.16" },
-      { version: "0.6.2" },
-      { version: "0.6.4" },
-      { version: "0.7.0" },
-      { version: "0.8.0" },
-      { version: "0.8.4" },
-      { version: "0.8.10" },
-      { version: "0.8.13" },
-    ],
+    compilers: [{ version: "0.8.24" }],
   },
   paths: {
     sources: "./contracts",

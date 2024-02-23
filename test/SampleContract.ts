@@ -1,16 +1,15 @@
-import { ethers } from "hardhat";
 import { expect } from "chai";
-import { Contract } from "@ethersproject/contracts";
+import { ethers } from "hardhat";
+import { SampleContract } from "../typechain-types";
 
 describe("SampleContract", function () {
-  let SampleContract: Contract;
+  let SampleContract: SampleContract;
 
   before(async function () {
-    const SampleContractFactory = await ethers.getContractFactory(
-      "SampleContract"
-    );
-    SampleContract = await SampleContractFactory.deploy("Initial message");
-    await SampleContract.deployed();
+    SampleContract = await ethers.deployContract("SampleContract", [
+      "Initial message",
+    ]);
+    SampleContract = await SampleContract.waitForDeployment();
   });
 
   describe("Deployment", function () {
@@ -24,7 +23,6 @@ describe("SampleContract", function () {
       await expect(SampleContract.update("New message"))
         .to.emit(SampleContract, "UpdatedMessages")
         .withArgs("Initial message", "New message");
-
       expect(await SampleContract.message()).to.equal("New message");
     });
   });

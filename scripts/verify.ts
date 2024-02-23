@@ -4,12 +4,12 @@
 
 import hre from "hardhat";
 
-const contractAddress = "0x1234567890123456789012345678901234567890";
+const contractAddress = "0x9b66D10ACDb115b7A569Ce9d4A34440bC44CB47E";
 
 async function main() {
   await hre.run("verify:verify", {
     address: contractAddress,
-    constructorArguments: ["Hello World"],
+    constructorArguments: ["Hello, Hardhat!"],
   });
 
   console.log("Contract verified!");

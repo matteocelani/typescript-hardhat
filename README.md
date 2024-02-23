@@ -3,9 +3,8 @@
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a script that deploys that contract.
 
 - [Hardhat](https://github.com/nomiclabs/hardhat): compile, run and test smart contracts
-- [TypeChain](https://github.com/ethereum-ts/TypeChain): generate TypeScript bindings for smart contracts
 - [Ethers](https://github.com/ethers-io/ethers.js/): renowned Ethereum library and wallet implementation
-- [Ethers-Ledger](https://github.com/anders-torbjornsen/ethers-ledger): fork of @ethersproject/hardware-wallets to support Ledger
+- [hardhat-ledger](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ledger): Hardhat plugin for integration with a Ledger hardware wallet.
 
 ## Getting Started
 
@@ -56,7 +55,7 @@ $ npx hardhat run --network <your-network> scripts/deploy.ts
 You can target any network from your Hardhat config using:
 
 ```sh
-$ npx hardhat run --network <your-network> scripts/deployHardware.ts
+$ npx hardhat run --network <your-network> scripts/deployLedger.ts
 ```
 
 #### Derivation path for ETH in Ledger

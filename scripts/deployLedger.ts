@@ -1,7 +1,9 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const [deployer] = await ethers.getSigners();
+  const deployer = await ethers.getSigner(
+    "0x1234567890123456789012345678901234567890"
+  );
 
   const balance = await ethers.provider.getBalance(deployer.address);
   const gasPrice = await (await ethers.provider.getFeeData()).gasPrice;
