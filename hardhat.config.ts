@@ -46,7 +46,7 @@ const config: HardhatUserConfig = {
     // Ethereum
     mainnet: {
       url: "https://mainnet.infura.io/v3/" + process.env.INFURA_API_KEY || "",
-      gasPrice: 75000000000,
+      gasPrice: 75000000000, // 75 gwei
       chainId: 1,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -54,7 +54,7 @@ const config: HardhatUserConfig = {
     },
     sepolia: {
       url: "https://sepolia.infura.io/v3/" + process.env.INFURA_API_KEY || "",
-      gasPrice: 75000000000,
+      gasPrice: 5000000000, // 5 gwei
       chainId: 11155111,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -63,7 +63,7 @@ const config: HardhatUserConfig = {
     // Arbitrum
     arbitrum: {
       url: "https://arb1.arbitrum.io/rpc",
-      gasPrice: 75000000000,
+      gasPrice: 5000000000, // 5 gwei
       chainId: 42161,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -71,7 +71,7 @@ const config: HardhatUserConfig = {
     },
     arbitrumGoerli: {
       url: "https://goerli-rollup.arbitrum.io/rpc",
-      gasPrice: 75000000000,
+      gasPrice: 5000000000, // 5 gwei
       chainId: 421613,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -80,7 +80,7 @@ const config: HardhatUserConfig = {
     // Avalanche
     avalanche: {
       url: "https://api.avax.network/ext/bc/C/rpc",
-      gasPrice: 225000000000,
+      gasPrice: 225000000000, // 225 gwei
       chainId: 43114,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -88,7 +88,7 @@ const config: HardhatUserConfig = {
     },
     avalancheFuji: {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
-      gasPrice: 225000000000,
+      gasPrice: 225000000000, // 225 gwei
       chainId: 43113,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -97,7 +97,7 @@ const config: HardhatUserConfig = {
     // BNB Smart Chain
     bsc: {
       url: "https://bsc-dataseed.binance.org/",
-      gasPrice: 20000000000,
+      gasPrice: 20000000000, // 20 gwei
       chainId: 56,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -105,7 +105,7 @@ const config: HardhatUserConfig = {
     },
     bscTestnet: {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-      gasPrice: 20000000000,
+      gasPrice: 20000000000, // 20 gwei
       chainId: 97,
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
@@ -115,7 +115,7 @@ const config: HardhatUserConfig = {
     polygon: {
       url: "https://polygon-rpc.com/",
       chainId: 137,
-      gasPrice: 8000000000,
+      gasPrice: 8000000000, // 8 gwei
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
@@ -123,7 +123,7 @@ const config: HardhatUserConfig = {
     polygonMumbai: {
       url: "https://rpc-mumbai.maticvigil.com",
       chainId: 80001,
-      gasPrice: 8000000000,
+      gasPrice: 8000000000, // 8 gwei
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
       //ledgerAccounts: ["0x1234567890123456789012345678901234567890"],
