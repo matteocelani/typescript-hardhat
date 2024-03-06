@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.23;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.24;
 
 /**
  * @title WETH
@@ -83,8 +83,8 @@ contract WETH {
         require(balances[msg.sender] >= amount, "WETH: insufficient balance");
         balances[msg.sender] -= amount;
         totalSupply -= amount;
-        payable(msg.sender).transfer(amount);
         emit Transfer(msg.sender, address(0), amount);
+        payable(msg.sender).transfer(amount);
     }
 
     receive() external payable {
