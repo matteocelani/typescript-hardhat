@@ -1,6 +1,6 @@
 {
   "name": "typescript-hardhat",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "TypeScript Hardhat configuration template",
   "keywords": [
     "ethereum",
@@ -57,11 +57,11 @@
     "@nomicfoundation/hardhat-verify": "^2.0.4",
     "@types/chai": "^4.3.12",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.25",
     "chai": "^4.4.1",
     "dotenv": "^16.4.5",
     "ethers": "^6.11.1",
-    "hardhat": "^2.20.1",
+    "hardhat": "^2.21.0",
     "hardhat-contract-sizer": "^2.10.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
