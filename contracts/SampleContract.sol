@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.26;
 
 contract SampleContract {
     event UpdatedMessages(string oldStr, string newStr);

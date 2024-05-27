@@ -130,7 +130,7 @@ const config: HardhatUserConfig = {
     },
   },
   solidity: {
-    compilers: [{ version: "0.8.24" }],
+    compilers: [{ version: "0.8.26" }],
   },
   paths: {
     sources: "./contracts",
